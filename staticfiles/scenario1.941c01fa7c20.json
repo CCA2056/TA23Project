@@ -1,0 +1,56 @@
+{
+    "topic": "Workplace Discrimination",
+    "imagePath": "img/scenario1.jpg",
+    "scenarios": [
+        {
+            "context": "You are a migrant female employee working for an Australian tech company located in Melbourne. You start off your morning well and good entering the office as usual, unfortunately one of the employees comes to you and starts making inappropriate comments on your body, which makes you extremely uncomfortable.",
+            "question": "There is a law in Victoria that protects you if you ever encounter this behaviour, which of these is the one you should use?",
+            "responses": [
+                { "text": "The Racial Discrimination Act", "correct": false, "feedback": "The Racial Discrimination Act would protect you if you were being discriminated against for your race which isn’t the case in this scenario." },
+                { "text": "The Sex Discrimination Act", "correct": true, "feedback": "The employee is sexually harassing you and you should report them to your manager or the authorities and use the Sex Discrimination Act in your complaint."  },
+                { "text": "The Workplace Relations Act", "correct": false, "feedback": "The Workplace Relations Act would protect you from unfair termination of employment which you are not experiencing in this scenario."  }
+            ],
+            "reference": "https://humanrights.gov.au/our-work/sex-discrimination/about-sex-discrimination"
+        },
+        {
+            "context": "After some time, your manager comes in and says that they’re behind schedule on the new project and you must work overtime with no additional pay as it’s not in the budget.",
+            "question": "What should you do in this situation?",
+            "responses": [
+                { "text": "Work for the overtime hours as you can’t argue back with your manager.", "correct": false, "feedback": "What your manager is forcing you to do is illegal and you have every right to argue back against them." },
+                { "text": "The additional hours from this overtime may land you a promotion in the future so you should agree and keep working.", "correct": false, "feedback": "It is illegal for your manager to force you to work overtime, so working the overtime hours can’t be legally recognized, and there’s no chance of you gaining a promotion from this." },
+                { "text": "Understand that what they’re doing is illegal under the Fair Work Act. You will be reporting them for attempting to exploit you.", "correct": true, "feedback": "What they’re doing is a violation of the Fair Work Act, and you shouldn’t accept any demand like this as it’s a way to take advantage of people who aren’t aware of the law." }
+            ],
+            "reference" : "https://www.fairwork.gov.au/find-help-for/visa-holders-migrants#protections-for-migrant-workers"
+        },
+        {
+            "context": "You’re currently doing very well at your job and exceeding all expectations, the time comes for the manager to state who’s getting a promotion. However, in the end, the promotion is given to someone new to the company who isn’t nearly as skilled as you. The decision most likely being made with bias.",
+            "question": "Is this situation, okay?",
+            "responses": [
+                { "text": "Yes, the manager has the right to choose who gets promoted even if it’s biased", "correct": false, "feedback": "The manager has no right to use bias as an excuse to make any decision within a company." },
+                { "text": "Yes, it was most likely not bias and you just need to work even harder", "correct": false, "feedback": "To promote someone who newly joined the company over an employee with an immensely greater skillset is definitely a biased decision." },
+                { "text": "No, the manager is violating the Equal Opportunity Act and you can report this to demand amends.", "correct": true, "feedback": "By promoting the new employee over you, they are violating the Equal Opportunity Act where everyone in the company must have an equal chance to be promoted and any bias shown is in strict negligence of this law." }
+            ],
+            "reference" : "https://www.humanrights.vic.gov.au/legal-and-policy/victorias-human-rights-laws/equal-opportunity-act/"
+        },
+        {
+            "context": "Your job is now starting to get very difficult as the manager has now imposed all employees with massive workloads that need to be met within extremely short deadlines. The stress and anxiety caused by this is unbearable and you don’t know how much longer you can go.",
+            "question": "What should you do?",
+            "responses": [
+                { "text": "You should bring up to your manager that they’re not providing a healthy and safe environment for their employees which is violating the Occupational Health and Safety Act", "correct": true, "feedback": "The manager is violating the Occupational Health and Safety Act which protects you from harmful working conditions and guarantees employee safety." },
+                { "text": "This is to be expected when working in Melbourne, just keep working and you will get used to it quickly", "correct": false, "feedback": "These are definitely not expected working conditions in Melbourne, and if anyone tries to persuade you otherwise, then they are trying to exploit you." },
+                { "text": "Speak to a therapist about your increased stress as they can give you ways to improve your mental health so that you can work more efficiently", "correct": false, "feedback": "Even though speaking to a therapist can help with the stress of work, in this scenario, you are being forced into unreasonable working conditions and should not accept it as simply 'stress of work.'" }
+            ],
+            "reference" : "https://www.vic.gov.au/tafe-toolkit-occupation-health-and-safety-act"
+        },
+        {
+            "context": "At the end of a month’s hard work, you get paid your monthly salary. However, after talking to some of your male colleagues, you realise that you are being paid less than them.",
+            "question": "Who should you contact to best help deal with this?",
+            "responses": [
+                { "text": "Fair Work Ombudsman", "correct": true, "feedback": "The Fair Work Ombudsman is directly responsible for enforcing compliance with workplace laws in Australia." },
+                { "text": "Victoria Police", "correct": false, "feedback": "While the Victoria Police can help, they don’t have direct knowledge about workplace laws and how to handle these types of violations." },
+                { "text": "Australia Emergency Services", "correct": false, "feedback": "The Australian Emergency Services are meant to help you when you have an extreme situation that requires immediate help." }
+            ],
+            "reference" : "https://www.fairwork.gov.au/workplace-problems/common-workplace-problems/im-a-migrant-worker-being-treated-unfairly"
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+body {
+    background-color: #F2ECE7;
+}
+
+/* Main Banner */
+#home-banner {
+    width: calc(100vw - 80px);
+    margin: 40px 0 0 40px;
+}
+
+/* Cards */
+#home-page-cards {
+    width: calc(100vw - 80px);
+    margin: 40px 0 40px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.home-page-card {
+    width: 500px; height: 440px;
+    background-color: #E7D9C0;
+}
+/* Card Image */
+.home-page-card-image {
+    margin: 30px 0 0 30px;
+    width: 440px; height: 270px;
+    background-size: cover;
+    background-position: center;
+}
+#home-page-card-image-scenario { background-image: url("../images/home-scenario-img.png")}
+#home-page-card-image-map { background-image: url("../images/home-map-img.jpg")}
+/* Card Text */
+.home-page-card-title {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--mainContentColour);
+}
+/* Card Arrow */
+.home-page-card-arrow-container {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.home-page-card-arrow {
+    margin-left: auto;
+    margin-right: 40px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Card Media Query */
+@media only screen and (max-width: 1080px) {
+    .home-page-card {
+        width: calc(100vw - 80px);
+    }
+    .home-page-card-image {
+        width: calc(100vw - 140px);
+    }
+}
