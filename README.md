@@ -29,4 +29,3 @@ Within the same directory, run: python manage.py runserver
 ### 3. Access the website!
 You can do so here:
 http://127.0.0.1:8000/
-"# TA23Project" 

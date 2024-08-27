@@ -10,14 +10,10 @@
     <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
     <link rel="stylesheet" href='{% static "css/variables.css" %}'>
 
-    <!-- Cinzel Decorative -->
+    <!-- Cinzel Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,13 +22,14 @@
         <!-- Nav Bar Left -->
         <div id="main-nav-left">
             <!-- Logo -->
-            <img id="logo" src='{% static "images/logo.png" %}'>
+            <img id="logo" src='{% static "images/logo.png" %}' onclick="relocateToHref('logo')">
             <!-- Options -->
             <ul id="main-nav-list">
-                <li><i class="fa-solid fa-scroll"></i> Map</li>
-                <li id="scenarioLink"><i class="fa-solid fa-map"></i> Scenarios</li>
+                <li>Culture Atlas</li>
+                <li id="main-nav-list-scenarios" onclick="relocateToHref('main-nav-list-scenarios')">Scenarios</li>
             </ul>
         </div>
+
         <!-- Title -->
         <div id="main-nav-title">Her New Melbourne</div>
     </nav>
@@ -41,7 +38,6 @@
     <div id="scenario">
         <h2 id="scenario-title">Scenario Role-Play</h2>
         <p id="scenario-content"></p>
-        <p id="question"></p>
         <form id="responseForm">
             <p>Please select your response:</p>
             <div id="response-options"></div>
@@ -49,63 +45,47 @@
         <button id="nextButton">Next</button>
         <p id="feedback"></p>
         <p id="reference"></p>
-        <p id="donefeedback"></p>
-        <button id="backtolist">Back to Scenario Role-play List</button>
     </div>
 
+    <script src= '{% static "js/links.js" %}'></script>
     <script>
-        document.getElementById('scenarioLink').addEventListener('click', function () {
-            window.location.href = '/scenario-role-play-list'; // Redirect to the scenario role play list page
-        });
-
-        //Redirection function for the back to scenario role-play list button 
-        document.getElementById('backtolist').addEventListener('click', function () {
-            window.location.href = '/scenario-role-play-list'; // Redirect to the scenario role play list page
-        });
-    
         document.addEventListener("DOMContentLoaded", function () {
             const index = sessionStorage.getItem('currentScenarioIndex');
             const fileName = `scenario${index}.json`;
             const basePath = '{% static "" %}'; // Get the base static path from Django
             const filePath = basePath + fileName; // Construct the full path
-    
+
             fetch(filePath)
                 .then(response => response.json())
                 .then(scenarioObject => {
                     const scenarios = scenarioObject.scenarios; // Adjusted for the new JSON structure
                     let currentStep = 0;
-    
+
                     function loadScenarioStep(stepIndex) {
-                        document.getElementById('backtolist').style.display = 'none';
-                        //document.getElementById('donefeedback').style.display = 'none';
                         const step = scenarios[stepIndex]; // Accessing scenarios array
                         let content = '';
-                        let question = '';
-    
+
                         content += `<strong>Context:</strong> ${step.context}<br>`;
                         document.getElementById('scenario-content').innerHTML = content;
 
-                        question += `<strong>Question:</strong> ${step.question}<br>`;
-                        document.getElementById('question').innerHTML = question;
-    
                         const responseOptionsContainer = document.getElementById('response-options');
                         responseOptionsContainer.innerHTML = '';
-    
+
                         step.responses.forEach((response, index) => {
                             const radioButton = document.createElement('input');
                             radioButton.type = 'radio';
                             radioButton.id = `response${index}`;
                             radioButton.name = 'response';
                             radioButton.value = index;
-    
+
                             const label = document.createElement('label');
                             label.htmlFor = `response${index}`;
                             label.innerText = response.text;
-    
+
                             responseOptionsContainer.appendChild(radioButton);
                             responseOptionsContainer.appendChild(label);
                             responseOptionsContainer.appendChild(document.createElement('br'));
-    
+
                             radioButton.addEventListener('change', function () {
                                 console.log(response.correct);
                                 if (response.correct) {
@@ -115,16 +95,18 @@
                                     document.getElementById('feedback').innerText = `Your answer is correct. ${response.feedback}`;
                                     document.getElementById('reference').innerText = `Reference: ${step.reference}`;
                                 }
-                                else {
+                                else{
                                     document.getElementById('nextButton').style.display = 'none';
                                     document.getElementById('reference').style.display = 'none';
                                     document.getElementById('feedback').style.display = 'block';
                                     document.getElementById('feedback').innerText = `Your answer is incorrect. ${response.feedback}`;
+                                    
                                 }
-                            });
+                            }
+                            );
                         });
                     }
-    
+
                     document.getElementById('nextButton').addEventListener('click', function () {
                         currentStep++;
                         if (currentStep < scenarios.length) {
@@ -133,19 +115,16 @@
                             document.getElementById('feedback').style.display = 'none';
                             document.getElementById('reference').style.display = 'none';
                         } else {
-                            // When the user finishes the last step of the scenario, show the back to list button.
-                            document.getElementById('backtolist').style.display = 'block';
-                            document.getElementById('donefeedback').style.display = 'block';
-                            document.getElementById('donefeedback').innerText = `Congratulations! now you have some knowledge of ${scenarioObject.topic}`;
+                            alert("You have completed the scenario.");
                         }
                     });
+
                     // Load the first step on page load
                     loadScenarioStep(currentStep);
                 })
                 .catch(error => console.error('Error loading the scenarios:', error));
         });
     </script>
-    
 
 </body>
 

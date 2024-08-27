@@ -6,10 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home Page</title>
+    <title>Her New Melbourne</title>
 
+    <meta name="description" content="Her New Melbourne is dedicated to supporting migrant women in Melbourne as they navigate their new environment, connect with community resources, and thrive both culturally and emotionally. Join us to confidently embrace your new life while staying true to your roots.">
+    <meta name="keywords" content="Melbourne, migrant women, cultural integration, Melbourne guide, roleplay scenarios, Melbourne maps, cultural adaptation, community resources, support for migrants, Her New Melbourne">
+
+    <!-- Cinzel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href='{% static "css/variables.css" %}'>
     <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+    <link rel="stylesheet" href='{% static "css/home-page.css" %}'>
 </head>
 <body>
     <!-- Nav Bar -->
@@ -17,11 +27,11 @@
         <!-- Nav Bar Left -->
         <div id="main-nav-left">
             <!-- Logo -->
-            <img id="logo" src='{% static "images/logo.png" %}'>
+            <img id="logo" src='{% static "images/logo.png" %}' onclick="relocateToHref('logo')">
             <!-- Options -->
             <ul id="main-nav-list">
-                <li>Map</li>
-                <li>Scenarios</li>
+                <li>Culture Atlas</li>
+                <li id="main-nav-list-scenarios" onclick="relocateToHref('main-nav-list-scenarios')">Scenarios</li>
             </ul>
         </div>
 
@@ -29,5 +39,27 @@
         <div id="main-nav-title">Her New Melbourne</div>
     </nav>
 
+    <!-- Main Banner -->
+    <img id="home-banner" src='{% static "images/home-banner.png" %}'>
+
+    <!-- Main Cards -->
+    <div id="home-page-cards">
+        <div class="home-page-card">
+            <div class="home-page-card-image" id="home-page-card-image-scenario"></div>
+            <div class="home-page-card-title">Scenario Roleplays</div>
+            <div class="home-page-card-arrow-container">
+                <img class="home-page-card-arrow" src='{% static "images/home-page-arrow.png"%}' onclick="relocateToHref('main-nav-list-scenarios')">
+            </div>
+        </div>
+        <div class="home-page-card">
+            <div class="home-page-card-image" id="home-page-card-image-map"></div>
+            <div class="home-page-card-title">Map</div>
+            <div class="home-page-card-arrow-container">
+                <img class="home-page-card-arrow" src='{% static "images/home-page-arrow.png"%}'>
+            </div>        
+        </div>
+    </div>
+
+    <script src='{% static "js/links.js"%}'></script>
 </body>
 </html>

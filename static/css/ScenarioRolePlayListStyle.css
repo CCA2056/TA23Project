@@ -5,14 +5,12 @@ body {
     padding: 0;
 }
 
-
-
 .container {
     background: white;
-    width: 70%; /* Increased width */
-    margin: 0.5vw auto; /* More margin for better centering */
+    width: 70%;
+    margin: 0.5vw auto;
     padding: 0.5vw;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 ul {
@@ -22,18 +20,16 @@ ul {
 
 .container li {
     background: #E7D9C0;
-    margin-bottom: 15px; /* Increased spacing */
-    padding: 15px; /* More padding for a better click area */
+    margin-bottom: 15px;
+    padding: 15px;
     cursor: pointer;
     font-size: 1.5vw;
 }
 
-
 .container li:hover {
-    background-color: #eee; /* Lighter hover effect */
-    text-decoration: none; /* Removes underline on hover */
+    background-color: #eee;
+    text-decoration: none;
 }
-
 
 img{
     width: 12vw;
@@ -47,6 +43,6 @@ img{
 }
 
 .image-container {
-    flex: 0 0 auto; /* Do not grow or shrink, and use the image's intrinsic width */
-    padding-right: 40px; /* Space between image and text */
+    flex: 0 0 auto;
+    padding-right: 40px;
 }

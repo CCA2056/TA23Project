@@ -1,10 +1,13 @@
-// Nav Bar 
-document.getElementById('logo').addEventListener('click', () => { relocateToHref('/home') })
-
-// Landing page
-if (window.location.pathname === "/") {
-    document.getElementById('get-started-button').addEventListener('click', () => { relocateToHref('/home') })
-}
+// Nav Link Pairs
+const navLinkPairs = [
+    {id: "logo", link: "/home"},
+    {id: "main-nav-list-scenarios", link: "/scenario-role-play-list"},
+    {id: "get-started-button", link: "/home"}
+]
 
 // Relocate to ref function
-const relocateToHref = href => window.location.href = href
+const relocateToHref = (id) => {
+    for (let i = 0; i < navLinkPairs.length; i++) {
+        if (id === navLinkPairs[i].id) window.location.href = navLinkPairs[i].link
+    }
+}

@@ -1,24 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Her New Melbourne</title>
+    <title>Map Page</title>
 
     <!-- Styling -->
     <link rel="stylesheet" href='{% static "css/variables.css" %}'>
     <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
-    <link rel="stylesheet" href='{% static "css/landing-page.css" %}'>
+    <link rel="stylesheet" href='{% static "css/map-page.css" %}'>
     <meta name="description" content="Her New Melbourne is dedicated to supporting migrant women in Melbourne as they navigate their new environment, connect with community resources, and thrive both culturally and emotionally. Join us to confidently embrace your new life while staying true to your roots.">
     <meta name="keywords" content="Her New Melbourne, migrant women support, Melbourne community resources, cultural integration, emotional wellbeing, migrant women Melbourne, navigating new environment, cultural roots, community connection">
-
-    <!-- Playfair Display / Cinzel Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <!-- Nav Bar -->
@@ -33,22 +26,12 @@
                 <li id="main-nav-list-scenarios" onclick="relocateToHref('main-nav-list-scenarios')">Scenarios</li>
             </ul>
         </div>
+
+        <!-- Title -->
+        <div id="main-nav-title">Her New Melbourne</div>
     </nav>
 
-    <!-- Background -->
-    <div id="background"></div>
-
-    <!-- Main Page-->
-    <div id="main-page">
-        <div id="main-title">Her New Melbourne</div>
-        <section id="main-content">
-            <div id="get-started-button-container">
-                <button id="get-started-button" onclick="relocateToHref('get-started-button')">Get Started!</button>
-            </div>
-            <div id="landing-page-description">Her New Melbourne is dedicated to supporting migrant women in Melbourne as they navigate their new environment, connect with community resources, and thrive both culturally and emotionally. Join us to confidently embrace your new life while staying true to your roots.</div>
-        </section>
-    </div>
-
     <script src='{% static "js/links.js" %}'></script>
+    <script src='{% static "js/coordinates.js" %}'></script>
 </body>
 </html>

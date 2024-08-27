@@ -6,16 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scenario List</title>
+    <!-- Style sheets -->
     <link rel="stylesheet" href="{% static 'css/scenarioRolePlayListStyle.css' %}">
     <link rel="stylesheet" href='{% static "css/variables.css" %}'>
     <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+
     <!-- Cinzel Decorative -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,11 +23,11 @@
         <!-- Nav Bar Left -->
         <div id="main-nav-left">
             <!-- Logo -->
-            <img id="logo" src='{% static "images/logo.png" %}'>
+            <img id="logo" src='{% static "images/logo.png" %}' onclick="relocateToHref('logo')">
             <!-- Options -->
             <ul id="main-nav-list">
-                <li><i class="fa-solid fa-scroll"></i> Map</li>
-                <li id="scenarioLink"><i class="fa-solid fa-map"></i> Scenarios</li>
+                <li>Culture Atlas</li>
+                <li id="main-nav-list-scenarios" onclick="relocateToHref('main-nav-list-scenarios')">Scenarios</li>
             </ul>
         </div>
 
@@ -39,11 +38,9 @@
     <div class="container">
         <ul id="topicList"></ul>
     </div>
-    <script>
-        document.getElementById('scenarioLink').addEventListener('click', function () {
-            window.location.href = '/scenario-role-play-list'; // Redirect to the scenarioroleplaylist page
-        });
 
+    <script src= '{% static "js/links.js" %}'></script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const scenarioFiles = ['scenario1.json', 'scenario2.json', 'scenario3.json'];
             const basePath = '{% static "" %}';
@@ -55,9 +52,9 @@
                     .then(response => response.json())
                     .then(scenarioObject => {
                         const topic = scenarioObject.topic;  // Directly access the 'topic' from the scenario object
-                        //console.log("topic:", topic);
+                        console.log("topic:", topic);
                         const imagePath = scenarioObject.imagePath;
-                        //console.log("Image path:", imagePath);
+                        console.log("Image path:", imagePath);
                         const li = document.createElement('li');
                         const scenarioDiv = document.createElement('div');
                         scenarioDiv.className = 'scenario';
