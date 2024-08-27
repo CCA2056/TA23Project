@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenario List</title>
+    <link rel="stylesheet" href="{% static 'css/scenarioRolePlayListStyle.css' %}">
+    <link rel="stylesheet" href='{% static "css/variables.css" %}'>
+    <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+    <!-- Cinzel Decorative -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav id="main-nav">
+        <!-- Nav Bar Left -->
+        <div id="main-nav-left">
+            <!-- Logo -->
+            <img id="logo" src='{% static "images/logo.png" %}'>
+            <!-- Options -->
+            <ul id="main-nav-list">
+                <li><i class="fa-solid fa-scroll"></i> Map</li>
+                <li id="scenarioLink"><i class="fa-solid fa-map"></i> Scenarios</li>
+            </ul>
+        </div>
+
+        <!-- Title -->
+        <div id="main-nav-title">Her New Melbourne</div>
+    </nav>
+
+    <div class="container">
+        <ul id="topicList"></ul>
+    </div>
+    <script>
+        document.getElementById('scenarioLink').addEventListener('click', function () {
+            window.location.href = '/scenario-role-play-list'; // Redirect to the scenarioroleplaylist page
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const scenarioFiles = ['scenario1.json', 'scenario2.json', 'scenario3.json'];
+            const basePath = '{% static "" %}';
+            const topicList = document.getElementById('topicList');
+
+            scenarioFiles.forEach((file, index) => {
+                const filePath = basePath + file;
+                fetch(filePath)
+                    .then(response => response.json())
+                    .then(scenarioObject => {
+                        const topic = scenarioObject.topic;  // Directly access the 'topic' from the scenario object
+                        //console.log("topic:", topic);
+                        const imagePath = scenarioObject.imagePath;
+                        //console.log("Image path:", imagePath);
+                        const li = document.createElement('li');
+                        const scenarioDiv = document.createElement('div');
+                        scenarioDiv.className = 'scenario';
+
+                        // Create image container
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'image-container';
+                        const img = document.createElement('img');
+                        img.src = basePath + imagePath;
+                        img.alt = `Image for ${topic}`;
+                        imgContainer.appendChild(img);
+                        scenarioDiv.appendChild(imgContainer);
+
+                        // Create text container
+                        const textContainer = document.createElement('div');
+                        textContainer.className = 'text-container';
+                        const text = document.createElement('p');
+                        text.textContent = `Scenario ${index + 1}: ${topic}`;
+                        textContainer.appendChild(text);
+                        scenarioDiv.appendChild(textContainer);
+
+                        li.appendChild(scenarioDiv);
+
+                        li.onclick = function () {
+                            sessionStorage.setItem('currentScenarioIndex', index + 1);
+                            window.location.href = 'scenario-role-play'; // Adjust as necessary
+                        };
+
+                        topicList.appendChild(li);
+                    })
+                    .catch(error => console.error(`Error loading ${file}:`, error));
+            });
+        });
+    </script>
+
+</body>
+
+</html>

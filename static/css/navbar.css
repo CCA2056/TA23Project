@@ -1,0 +1,55 @@
+/* Body */
+body { margin: 0; }
+
+/* Droid Sans Bold Font */
+@font-face {
+    font-family: "Droid Sans";
+    font-weight: 700;
+    src: url("../fonts/droid-sans.bold.ttf");
+}
+
+/* Nav Bar */
+#main-nav {
+    margin: 0;
+    width: 100vw;
+    height: var(--nav-height);
+    background-color: var(--secondaryContentColour);
+    display: flex;
+    color: var(--mainContentColour);
+    justify-content: space-between;
+}
+
+/* Logo */
+#logo {
+    margin: calc(5px / var(--scaling)) 0 0 var(--nav-margin-left-right);
+    width: auto;
+    height: var(--logo-height);
+    cursor: pointer;
+}
+
+/* Main Nav List */
+#main-nav-left {
+    display: flex;
+}
+#main-nav-list {
+    display: flex;
+    list-style-type: none;
+    font-family: "Droid Sans";
+    font-weight: 700;
+}
+#main-nav-list li {
+    padding: 0 2vw;
+    line-height: calc(var(--nav-height) - 2vw);
+    font-size: 1.75vw;
+    text-align: center;
+}
+#main-nav-list li:hover {
+    cursor: pointer;
+}
+#main-nav-title {
+    margin-right: var(--nav-margin-left-right);
+    line-height: var(--nav-height);
+    font-size: 2vw;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+}

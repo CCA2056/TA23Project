@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href='{% static "css/variables.css" %}'>
+    <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav id="main-nav">
+        <!-- Nav Bar Left -->
+        <div id="main-nav-left">
+            <!-- Logo -->
+            <img id="logo" src='{% static "images/logo.png" %}'>
+            <!-- Options -->
+            <ul id="main-nav-list">
+                <li>Map</li>
+                <li>Scenarios</li>
+            </ul>
+        </div>
+
+        <!-- Title -->
+        <div id="main-nav-title">Her New Melbourne</div>
+    </nav>
+
+</body>
+</html>

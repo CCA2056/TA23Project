@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her New Melbourne</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href='{% static "css/variables.css" %}'>
+    <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+    <link rel="stylesheet" href='{% static "css/landing-page.css" %}'>
+    <meta name="description" content="Her New Melbourne is dedicated to supporting migrant women in Melbourne as they navigate their new environment, connect with community resources, and thrive both culturally and emotionally. Join us to confidently embrace your new life while staying true to your roots.">
+    <meta name="keywords" content="Her New Melbourne, migrant women support, Melbourne community resources, cultural integration, emotional wellbeing, migrant women Melbourne, navigating new environment, cultural roots, community connection">
+
+    <!-- Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav id="main-nav">
+        <!-- Nav Bar Left -->
+        <div id="main-nav-left">
+            <!-- Logo -->
+            <img id="logo" src='{% static "images/logo.png" %}'>
+            <!-- Options -->
+            <ul id="main-nav-list">
+                <li>Map</li>
+                <li>Scenarios</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Background -->
+    <div id="background"></div>
+
+    <!-- Main Page-->
+    <div id="main-page">
+        <div id="main-title">Her New Melbourne</div>
+        <section id="main-content">
+            <div id="get-started-button-container">
+                <button id="get-started-button">Get Started!</button>
+            </div>
+            <div id="landing-page-description">Her New Melbourne is dedicated to supporting migrant women in Melbourne as they navigate their new environment, connect with community resources, and thrive both culturally and emotionally. Join us to confidently embrace your new life while staying true to your roots.</div>
+        </section>
+    </div>
+
+    <script src='{% static "js/links.js" %}'></script>
+</body>
+</html>
