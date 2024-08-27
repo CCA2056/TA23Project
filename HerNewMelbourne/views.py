@@ -11,3 +11,5 @@ def scenarioRolePlay(request):
 
 def scenarioRolePlayList(request):
     return render(request, 'ScenarioRolePlayList.html')
+
+

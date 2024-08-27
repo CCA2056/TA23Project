@@ -4,7 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.landingPage, name='landing-page'),
     path('home', views.homePage, name='home-page'),
-    path('map', views.mapPage, name='map-page'),
     path('scenario-role-play',views.scenarioRolePlay, name = 'scenario-role-play'),
     path('scenario-role-play-list',views.scenarioRolePlayList, name = 'scenario-role-play-list'),
 ]
