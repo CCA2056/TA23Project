@@ -2,7 +2,7 @@ import os
 from .settings import *
 from .settings import BASE_DIR
 
-ALLOWED_HOSTS = [os.environ['HOSTNAME'],]
+ALLOWED_HOSTS = [os.environ['HOSTNAME'],'5120project-e9fub0caa2d5etg5.australiacentral-01.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['HOSTNAME']]
 DEBUG = True
 
