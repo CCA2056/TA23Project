@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-#dummysecretkey'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 STATIC_URL = '/static/'
 
