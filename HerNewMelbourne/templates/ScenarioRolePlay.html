@@ -45,6 +45,8 @@
         <button id="nextButton">Next</button>
         <p id="feedback"></p>
         <p id="reference"></p>
+        <p id="donefeedback">this is done feedback</p>
+        <button id="backtolist" onclick="relocateToHref('main-nav-list-scenarios')">Back to Scenario List</button>
     </div>
 
     <script src= '{% static "js/links.js" %}'></script>
@@ -62,6 +64,8 @@
                     let currentStep = 0;
 
                     function loadScenarioStep(stepIndex) {
+                        document.getElementById('donefeedback').style.display = 'none';
+                        document.getElementById('backtolist').style.display = 'none';
                         const step = scenarios[stepIndex]; // Accessing scenarios array
                         let content = '';
 
@@ -115,7 +119,10 @@
                             document.getElementById('feedback').style.display = 'none';
                             document.getElementById('reference').style.display = 'none';
                         } else {
-                            alert("You have completed the scenario.");
+                            document.getElementById('donefeedback').innerText = `Congratulations! You've more knowledge of ${scenarioObject.topic}`;
+                            document.getElementById('donefeedback').style.display = 'block';
+                            document.getElementById('backtolist').style.display = 'block';
+                            //alert("You have completed the scenario.");
                         }
                     });
 

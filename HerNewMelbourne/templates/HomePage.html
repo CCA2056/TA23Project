@@ -45,9 +45,9 @@
     <!-- Main Cards -->
     <div id="home-page-cards">
         <div class="home-page-card">
-            <div class="home-page-card-image" id="home-page-card-image-scenario"></div>
-            <div class="home-page-card-title">Scenario Roleplays</div>
-            <div class="home-page-card-arrow-container">
+            <div class="home-page-card-image" onclick="relocateToHref('main-nav-list-scenarios')" id="home-page-card-image-scenario"></div>
+            <div class="home-page-card-title" onclick="relocateToHref('main-nav-list-scenarios')">Scenario Roleplays</div>
+            <div class="home-page-card-arrow-container" onclick="relocateToHref('main-nav-list-scenarios')">
                 <img class="home-page-card-arrow" src='{% static "images/home-page-arrow.png"%}' onclick="relocateToHref('main-nav-list-scenarios')">
             </div>
         </div>

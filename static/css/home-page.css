@@ -26,6 +26,7 @@ body {
     width: 440px; height: 270px;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 #home-page-card-image-scenario { background-image: url("../images/home-scenario-img.png")}
 #home-page-card-image-map { background-image: url("../images/home-map-img.jpg")}
@@ -38,6 +39,7 @@ body {
     font-weight: 700;
     font-size: 36px;
     color: var(--mainContentColour);
+    cursor: pointer;
 }
 /* Card Arrow */
 .home-page-card-arrow-container {
@@ -45,6 +47,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 .home-page-card-arrow {
     margin-left: auto;
